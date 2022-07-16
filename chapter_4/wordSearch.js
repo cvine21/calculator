@@ -4,7 +4,28 @@
 // - Второй уровень дополнительно включает в себя поиск по диагонали
 // - Слова могут быть записаны слева направо и наоборот.
 
-function searchSubString(puzzle, word) {}
+
+function searchSubString(puzzle, word) {
+	let reversedWord = word.split("").reverse().join('');;
+	const vertical = [];
+
+	
+	for (let h = 0; h < puzzle[0].length; ++h) {
+		vertical.push([]);
+		for (let v = 0; v < puzzle.length; ++v)
+			vertical[h].push(puzzle[v][h]);
+	}
+	
+	for (let i in puzzle) {
+		if (puzzle[i].join('').indexOf(word) != -1
+		|| puzzle[i].join('').indexOf(reversedWord) != -1
+		|| vertical[i].join('').indexOf(word) != -1
+		|| vertical[i].join('').indexOf(reversedWord) != -1)
+			return true;
+	}
+
+	return false;
+}
 
 const examplePuzzle = [
   ["b", "l", "g", "o", "l", "d", "s"],
@@ -15,12 +36,3 @@ const examplePuzzle = [
   ["h", "u", "h", "a", "e", "a", "u"],
   ["k", "q", "j", "c", "c", "m", "r"],
 ];
-
-// Level 1
-searchSubString(examplePuzzle, "like"); // true
-searchSubString(examplePuzzle, "gold"); // true
-searchSubString(examplePuzzle, "queen"); // true
-
-// Level 2
-searchSubString(examplePuzzle, "cake"); // true
-

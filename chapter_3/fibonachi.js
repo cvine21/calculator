@@ -7,6 +7,3 @@ function fibo(index) {
 		return 1;
 	return fibo(index - 1) + fibo(index - 2);
 }
-
-
-alert(fibo(0)) // Вернет 8

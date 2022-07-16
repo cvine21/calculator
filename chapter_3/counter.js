@@ -6,8 +6,3 @@ function getCount() {
 }
 
 let counter = getCount();
-
-alert(counter()); // Функция вернет 0
-alert(counter()); // Функция вернет 3
-alert(counter()); // Функция вернет 6
-alert(counter()); // Функция вернет 9

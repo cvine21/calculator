@@ -11,7 +11,3 @@ function removeString(message, symbol) {
 
 	return arr.join('');
 }
-
-// console.log(removeString("Большое и интересное сообщение", "о")); // Бльше и интересне сбщение
-// console.log(removeString("Hello world!", "z")); // Бльше и интересне сбщение
-// console.log(removeString("А роза азора", "А")); // Бльше и интересне сбщение

@@ -4,11 +4,20 @@
 // За раз банкомат может выдавать не более 20 купюр, если купюр для выдачи не хватает то выводится ошибка 'Limit exceeded'
 
 function atm(sum) {
-  const banknots = [5000, 2000, 1000, 500, 200, 100, 50];
+  	const banknots = [5000, 2000, 1000, 500, 200, 100, 50];
+  	let cash = {};
+	maxBils = 20;
+
+	for (let i in banknots) {
+		if (sum >= banknots[i]) {
+			cash[banknots[i]] = Math.floor(sum / banknots[i]);
+			sum -= cash[banknots[i]] * banknots[i];
+			maxBils -= cash[banknots[i]];
+		}
+		if (maxBils < 0)
+			return "Limit exceeded";
+	}
+	if (sum != 0)
+		return "Incorrect value";
+	return cash;
 }
-
-atm(8350); // {5000 : 1, 2000 : 1, 1000 : 1, 200 : 1, 100 : 1, 50 : 1 }
-atm(2570); // Incorrect value
-atm(100050); // limit exceeded
-
-

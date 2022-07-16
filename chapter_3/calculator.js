@@ -64,7 +64,3 @@ function divide(a) {
 function mult(a) {
 	return (b) => a * b;
 }
-
-alert(four()); // В итоге вернется 4
-alert(five(mult(three()))); // В итоге вернется 15
-alert(one(mult(three(plus(four()))))); // В итоге вернется 7

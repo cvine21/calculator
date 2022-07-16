@@ -13,8 +13,3 @@ function factorial(n) {
 function paskalsTriangle(x, y) {
 	return factorial(y)/(factorial(x)*factorial(y - x));
 }
-
-
-alert(paskalsTriangle(2, 3)); // 3
-alert(paskalsTriangle(4, 5)); // 5
-alert(paskalsTriangle(1, 1)); // 1
