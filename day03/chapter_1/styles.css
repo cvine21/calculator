@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+#title {
+	color: #fdfdf6;
+	margin: 0;
+	font-size: 3rem;
+	font-weight: normal;
+	text-align: center;
+	padding: 1rem;
+}
+
+body {
+	background-color: black;
+}
+
+.clear-button {
+	background-color: #9f9f9f;
+}
+
+#buttons {
+	width: 350px;
+	height: 450px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+	grid-gap: 5px;
+	margin: auto;
+}
+
+button {
+	background-color: #313131;
+	color: white;
+	font-size: 2rem;
+	border: 0;
+}
+
+button:active {
+	opacity: 50%;
+	box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+
+button {
+	border-radius: 50%;
+}
+
+.operation {
+	background-color: #f69808;
+}
+
+#result {
+	width: 100%;
+	border: 0;
+	padding-left: 2rem;
+	padding-right: 0;
+	border-radius: 50px;
+	grid-column: 1 / 4;
+	font-size: 3rem;
+	background-color: #313131;
+	color: white;
+}
