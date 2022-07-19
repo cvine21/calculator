@@ -5,11 +5,22 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Calculator</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
+	<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom text-white">
+		<h3 id="title" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto">Calculator</h3>
+		<ul class="nav nav-pills align-items-center">
+			<li class="nav-item">
+				<a href="#" class="nav-link text-white">Calculator</a>
+			</li>
+			<li class="nav-item">
+				<a href="#" class="nav-link text-white">Profile</a>
+			</li>
+		</ul>
+	</header>
 	<div id="calculator">
-		<h3 id="title">Calculator</h3>
 		<div id="buttons">
 			<div id="result">
 				<div class="current-operand"></div>
@@ -33,6 +44,7 @@
 			<button class="equals">=</button>
 		</div>
 	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 	<script src="myScript.js"></script>
 </body>
 </html>

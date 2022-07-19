@@ -8,13 +8,16 @@ html {
 	font-size: 62.5%;
 }
 
+.nav-link {
+	font-size: 1.6rem;
+	font-family: 'Courier New', Courier, monospace;
+}
+
 #title {
-	color: #fdfdf6;
 	margin: 0;
-	font-size: 3rem;
+	font-size: 4rem;
 	font-weight: normal;
-	text-align: center;
-	padding: 1rem;
+	font-family: 'Courier New', Courier, monospace;
 }
 
 body {
