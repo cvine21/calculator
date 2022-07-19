@@ -57,12 +57,13 @@ button {
 
 #result {
 	width: 100%;
-	border: 0;
 	padding-left: 2rem;
-	padding-right: 0;
+	border: 0;
 	border-radius: 50px;
 	grid-column: 1 / 4;
+	display: flex;
+	align-items: center;
 	font-size: 3rem;
-	background-color: #313131;
 	color: white;
+	background-color: #313131;
 }

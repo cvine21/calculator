@@ -2,15 +2,12 @@ const numberButtons = document.querySelectorAll('.number');
 const operationButtons = document.querySelectorAll('.operation');
 const equalsButton = document.querySelector('.equals');
 const clearButton = document.querySelector('.clear-button');
-const previousOperandTextELement = document.querySelector('.previous-operand');
-const currentOperandTextELement = document.querySelector('.current-operand');
+const currentOperandTextElement = document.querySelector('.current-operand');
 
 
 class Calculator {
-
-	constructor(previousOperandTextELement, currentOperandTextELement) {
-		this.previousOperandTextELement = previousOperandTextELement;
-		this.currentOperandTextELement = currentOperandTextELement;
+	constructor(currentOperandTextElement) {
+		this.currentOperandTextElement = currentOperandTextElement;
 		this.clear();
 	}
 
@@ -22,6 +19,7 @@ class Calculator {
 
 	appendNumber(number) {
 		if (number === '.' && this.currentOperand.includes('.')) return ;
+		if (this.currentOperand.length == 13) return ;
 		this.currentOperand = this.currentOperand.toString() + number.toString();
 	} 
 
@@ -62,34 +60,53 @@ class Calculator {
 		this.previousOperand = '';
 	}
 
+	getDisplayNumber(number) {
+		let stringNumber = number.toString();
+		let integerDigits = parseFloat(stringNumber.split('.')[0]);
+		let decimalDigits = stringNumber.split('.')[1];
+		let integerDisplay;
+
+		if (isNaN(integerDigits)) {
+			integerDisplay = '';
+		} else {
+			integerDisplay = integerDigits.toLocaleString('en', {
+				maximumFractionDigits: 0 });
+		}
+		if (decimalDigits != null) {
+			return `${integerDisplay}.${decimalDigits}`;
+		} else  {
+			return integerDisplay;
+		}
+	}
+	
 	updateDisplay() {
-		this.previousOperandTextELement.innerText = this.previousOperand;
-		this.currentOperandTextELement.innerText = this.currentOperand;
+		this.currentOperandTextElement.innerText =
+			this.getDisplayNumber(this.currentOperand);
 	}
 }
 
-let calculator = new Calculator(previousOperandTextELement, currentOperandTextELement);
+let calculator = new Calculator(currentOperandTextElement);
 
 numberButtons.forEach(button => {
 	button.addEventListener('click', () =>  {
 		calculator.appendNumber(button.innerText);
 		calculator.updateDisplay();
 	})
-})
+});
 
 operationButtons.forEach(button => {
 	button.addEventListener('click', () =>  {
 		calculator.chooseOperation (button.innerText);
 		calculator.updateDisplay();
 	})
-})
+});
 
 equalsButton.addEventListener('click', button => {
 	calculator.compute();
 	calculator.updateDisplay();
-})
+});
 
 clearButton.addEventListener('click', button => {
 	calculator.clear();
 	calculator.updateDisplay();
-}) 
+});
