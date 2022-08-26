@@ -1,4 +1,4 @@
-# Calculator
+# Calculator 
 A calculator that does some calculations
 
-<img src='screenshot.png' style="text-align: center" />
+<img width="400px" src='screenshot.png'/>
